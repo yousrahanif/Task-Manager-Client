@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 const Register = () => {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
-  const { createUser } = useContext(AuthContext);
+  const { createUser, signInWithGoogle } = useContext(AuthContext);
 
   const handleShowPassword = () => {
     setShowPassword(!showPassword);
@@ -54,6 +54,29 @@ const Register = () => {
         });
       });
   };
+
+
+
+     const handleGoogleSignIn=()=>{
+        signInWithGoogle()
+        .then(result=>{
+          // console.log(result.user)
+          //
+         
+          navigate("/")
+          Swal.fire({
+            title: "Good job!",
+            text: "Login successful!",
+            icon: "success",
+          });
+        })
+        .catch(error=>{
+        // console.log('ERRROR', error.message)
+        })
+      }
+
+
+      
 
   return (
     <div className="hero bg-base-400 min-h-screen">
@@ -111,6 +134,13 @@ const Register = () => {
               </Link>
             </p>
           </form>
+
+
+          <p className="flex justify-center items-center pb-4">
+              <button onClick={handleGoogleSignIn} className="btn bg-gradient-to-r from-blue-300 via-blue-400 to-purple-300   ">Google</button>
+            </p>
+
+
         </div>
       </div>
     </div>

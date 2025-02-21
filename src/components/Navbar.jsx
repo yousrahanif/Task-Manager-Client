@@ -72,12 +72,13 @@
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { useContext } from "react";
+import { FaClock } from "react-icons/fa";
 
 const Navbar = () => {
     const { user, signOutUser } = useContext(AuthContext);
 
     return (
-        <div className="navbar bg-base-100 sticky top-0 z-50">
+        <div className="navbar bg-base-300 sticky top-0 z-50">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} htmlFor="dropdown-menu" className="btn btn-ghost lg:hidden"> {/* htmlFor for accessibility */}
@@ -86,7 +87,7 @@ const Navbar = () => {
                         </svg>
                     </label>
                     <ul tabIndex={0} id="dropdown-menu" className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"> {/* id for htmlFor */}
-                        <li> {/* Wrap NavLinks in <li> for proper menu structure */}
+                        <li> 
                             <NavLink to="/allTasks" className={({ isActive }) => `text-lg ${isActive ? 'font-bold' : ''}`}>
                                 All Tasks
                             </NavLink>
@@ -98,11 +99,11 @@ const Navbar = () => {
                         </li>
                     </ul>
                 </div>
-                <NavLink to="/" className="btn btn-ghost text-xl">TaskTracker</NavLink>
+                <NavLink to="/" className="btn btn-ghost text-xl"><FaClock className=""></FaClock> TaskTracker</NavLink>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 py-2">
-                    <li> {/* Wrap NavLinks in <li> */}
+                    <li> 
                         <NavLink to="/allTasks" className={({ isActive }) => `text-lg ${isActive ? 'font-bold' : ''}`}>
                             All Tasks
                         </NavLink>
