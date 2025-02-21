@@ -123,7 +123,7 @@ const Register = () => {
               </button>
             </div>
             <div className="form-control mt-6">
-              <button className="btn bg-blue-400 ">
+              <button className="btn bg-blue-400 text-black ">
                 Register
               </button>
             </div>
@@ -137,7 +137,7 @@ const Register = () => {
 
 
           <p className="flex justify-center items-center pb-4">
-              <button onClick={handleGoogleSignIn} className="btn bg-blue-400   ">Google</button>
+              <button onClick={handleGoogleSignIn} className="btn bg-blue-400 text-black  ">Google</button>
             </p>
 
 

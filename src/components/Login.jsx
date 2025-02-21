@@ -82,12 +82,12 @@ Swal.fire({
                
               </div>
               <div className="form-control mt-6">
-                <button className="btn bg-gradient-to-r bg-blue-400   ">Login</button>
+                <button className="btn bg-gradient-to-r bg-blue-400  text-black  ">Login</button>
               </div>
               <p>New To Here? Please <Link className="text-blue-600" to="/register">Register</Link></p>
             </form>
             <p className="flex justify-center items-center pb-4">
-              <button onClick={handleGoogleSignIn} className="btn bg-blue-400   ">Google</button>
+              <button onClick={handleGoogleSignIn} className="btn bg-blue-400 text-black  ">Google</button>
             </p>
           </div>
           
